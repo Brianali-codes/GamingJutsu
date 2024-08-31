@@ -1,0 +1,21 @@
+.buttonDiv button{
+    width: 70px;
+    color: black;
+    border-radius: 10px;
+    background-color: #ff7272;
+    padding: 5px;
+    transition: 0.3s;
+}
+.buttonDiv button:hover{
+    transition: 0.3s;
+    background-color: #f17d7d;
+}
+
+.buttonDiv{
+    gap: 10px;
+}
+
+
+
+
+
