@@ -18,27 +18,40 @@ async function getNews() {
     const newsContainer = document.getElementById("main");
 
 
-    const mainImage = document.getElementById("mainImage")
-    let imageRandomizer = document.createElement('img')
-    imageRandomizer.src = data.articles[randomNo].urlToImage;
-
     
     if (Array.isArray(data.articles) && data.articles.length > 0) {
-      // Generate a random number between 1 and 100
-      let randomNo = Math.floor(Math.random() * 100) + 1;
+      let randomNo; // Declare randomNo outside the loop
 
-      // Keep generating random numbers until an article with an image is found
-      while (!data.articles[randomNo - 1].urlToImage) {
+      do {
         randomNo = Math.floor(Math.random() * 100) + 1;
-      }
-      let imager = document.getElementById("mainImage")
-      // Article with an image found, log the image URL
-      console.log(data.articles[randomNo - 1].urlToImage);
-      imager.src = data.articles[randomNo - 1].urlToImage
+      } while (!data.articles[randomNo - 1].urlToImage); // Ensure an article with an image is found
+
+      const randomArticle = data.articles[randomNo - 1];
+      const mainImage = document.getElementById("mainImage");
+      const titleElement = document.createElement("p");
+      const descElement = document.createElement("p")
+      const descPart = document.getElementById("descriptions")
+
+
+      mainImage.src = randomArticle.urlToImage;
+      mainImage.style.borderRadius = "12px"
+      titleElement.textContent = randomArticle.title;
+      descElement.textContent = randomArticle.description
+
+      const title = document.getElementById("LP-IMG"); // Assuming you have a container for the title
+      title.appendChild(titleElement); // Append the title to the container
+      descPart.appendChild(descElement);
+      titleElement.id = "Titles"
+      
     } else {
       console.error('No articles found or data.articles is not an array.');
     }
     
+
+
+
+
+
 
     data.articles.forEach(article => {
       if (article.urlToImage) { // Check if image URL exists
@@ -55,10 +68,15 @@ async function getNews() {
         newsCard.appendChild(image);
 
         const title = document.createElement("p");
+        const description = document.createElement("p");
         title.textContent = article.title;
+        description.textContent = article.description;
         title.style.textAlign = "start";
         title.classList.add("news-title"); // Assuming you meant 'news-title'
+
+
         newsCard.appendChild(title);
+        newsCard.appendChild(description)
 
         const origin = document.createElement("p");
         origin.textContent = article.source.name;
@@ -69,7 +87,7 @@ async function getNews() {
         newsContainer.appendChild(newsCard);
         
       } // End if (article.urlToImage)
-
+        console.log(data.articles)
       
 
     });
