@@ -56,6 +56,27 @@
 
 #main{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
+}
+#mainImage{
+  width: 65vw;
+  height: 55vh;
+}
+#MoreImgs{
+  width: 20%;
+  gap: 20px;
+}
+#Titles{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 30px;
+  text-shadow: 1px 1px gray;
+  text-indent: 1px;
+}
+.headers{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 0px;
+}
+#DESCRIPTIONS{
+  width: 30%;
 }
 
