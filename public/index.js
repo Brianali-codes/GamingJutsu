@@ -36,6 +36,7 @@ async function getNews() {
       mainImage.src = randomArticle.urlToImage;
       mainImage.style.borderRadius = "12px"
       titleElement.textContent = randomArticle.title;
+      titleElement.style.textAlign = "center"
       descElement.textContent = randomArticle.description
 
       const title = document.getElementById("LP-IMG"); // Assuming you have a container for the title
@@ -59,6 +60,7 @@ async function getNews() {
         newsCard.classList.add("news-card");
 
         const image = document.createElement("img");
+        image.style.borderRadius = "10px"
         image.src = article.urlToImage;
         image.alt = article.title || "News Image"; // Provide meaningful alt text
         image.onerror = function() { // Handle missing or broken images
@@ -71,12 +73,13 @@ async function getNews() {
         const description = document.createElement("p");
         title.textContent = article.title;
         description.textContent = article.description;
-        title.style.textAlign = "start";
+        title.style.textAlign = "center";
         title.classList.add("news-title"); // Assuming you meant 'news-title'
 
 
         newsCard.appendChild(title);
         newsCard.appendChild(description)
+        newsCard.style.borderRadius = "10px"
 
         const origin = document.createElement("p");
         origin.textContent = article.source.name;

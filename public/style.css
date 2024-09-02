@@ -59,12 +59,8 @@
     grid-template-columns: repeat(4,1fr);
 }
 #mainImage{
-  width: 65vw;
-  height: 55vh;
-}
-#MoreImgs{
-  width: 20%;
-  gap: 20px;
+  width:100%;
+  height: 70vh;
 }
 #Titles{
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -77,6 +73,33 @@
   font-size: 0px;
 }
 #DESCRIPTIONS{
-  width: 30%;
+  width: 100%;
 }
-
+#MENU{
+  width: 20px;
+  display: none;
+}
+#NAVBAR{
+  position: fixed;
+  width: 100%;
+}
+@media (max-width: 768px) {
+    #main{
+      display: flex;
+      flex-direction: column;
+    }
+    #LP{
+      display: flex;
+      flex-direction: column;
+    }
+    #mainImage{
+      width: 100%;
+      height: 50%;
+    }
+    .buttonDiv{
+      display: none;
+    }
+    #MENU{
+      display: block;
+    }
+}
