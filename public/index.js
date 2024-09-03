@@ -85,6 +85,7 @@ async function getNews() {
         origin.textContent = article.source.name;
         origin.classList.add("news-origin"); // Assuming you meant 'news-origin'
         newsCard.appendChild(origin);
+        newsCard.style.cursor = "pointer"
 
 
         newsContainer.appendChild(newsCard);
