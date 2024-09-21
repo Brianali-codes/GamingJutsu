@@ -1,8 +1,5 @@
 //global variables and other declarations
 let randomNo = Math.floor(Math.random() * 100)
-console.log(randomNo)
-
-
 
 
 async function getNews() {
@@ -90,9 +87,8 @@ async function getNews() {
 
         newsContainer.appendChild(newsCard);
         
-      } // End if (article.urlToImage)
-        console.log(data.articles)
-      
+      }
+       
 
     });
   } catch (error) {
