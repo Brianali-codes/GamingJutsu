@@ -16,7 +16,8 @@ async function getNews() {
     const response = await fetch(url, {
       headers: {
         'User-Agent': 'Mozilla/5.0',
-        'Accept': 'application/json'
+        'Accept': 'application/json',
+        'Upgrade': 'h2c'  // Requesting an upgrade to HTTP/2
       }
     });
 
