@@ -9,6 +9,7 @@ async function getNews() {
   const apiKey = "4e1d64b3da574f94b858e5bb93328485";
   const url = `https://newsapi.org/v2/everything?q=gaming&sortBy=popularity&apiKey=${apiKey}`;
 
+
   try {
     
 
