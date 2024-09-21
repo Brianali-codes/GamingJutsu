@@ -3,13 +3,23 @@ let randomNo = Math.floor(Math.random() * 100)
 
 
 async function getNews() {
+
+  
+
   const apiKey = "4e1d64b3da574f94b858e5bb93328485";
   const url = `https://newsapi.org/v2/everything?q=gaming&sortBy=popularity&apiKey=${apiKey}`;
 
   try {
     
 
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0',
+        'Accept': 'application/json'
+      }
+    });
+
+    
     const data = await response.json();
 
     const newsContainer = document.getElementById("main");
